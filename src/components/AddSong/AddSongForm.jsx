@@ -1,23 +1,25 @@
 import React, { useState } from 'react';
+import './AddSongForm.css'
 
 const PostForm = (props) => {
-
+    
     const [title, setTitle] = useState('');
     const [artist, setArtist] = useState('');
     const [album, setAlbum] = useState('');
     const [genre, setGenre] = useState('');
-    const [releaseDate, setReleaseDate] = useState('mm/dd/yyyy');
+    const [releaseDate, setReleaseDate] = useState('');
+    
     function handleSubmit(event){
         event.preventDefault();
-        let newEntry = {
+        let newSong = {
             title: title,
             artist: artist,
             album: album,
             genre: genre,
             releaseDate: releaseDate
         };
-        console.log(newEntry);
-        props.addNewEntry(newEntry)
+        console.log(newSong);
+        props.addNewSong(newSong)
     }
     return(
         <div className='border-box'>
@@ -37,4 +39,4 @@ const PostForm = (props) => {
         </div>
     );
 }
-    export default PostForm;
+    export default PostForm; 
